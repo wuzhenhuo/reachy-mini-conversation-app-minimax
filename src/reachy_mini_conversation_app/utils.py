@@ -36,6 +36,7 @@ def parse_args() -> tuple[argparse.Namespace, list]:  # type: ignore
     )
     parser.add_argument("--gradio", default=False, action="store_true", help="Open gradio interface")
     parser.add_argument("--debug", default=False, action="store_true", help="Enable debug logging")
+    parser.add_argument("--sim", default=False, action="store_true", help="Spawn a simulated robot (no physical robot required)")
     parser.add_argument(
         "--robot-name",
         type=str,

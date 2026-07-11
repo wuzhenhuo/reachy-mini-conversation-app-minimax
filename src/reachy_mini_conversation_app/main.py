@@ -65,6 +65,9 @@ def run(
             robot_kwargs = {}
             if args.robot_name is not None:
                 robot_kwargs["robot_name"] = args.robot_name
+            if getattr(args, "sim", False):
+                robot_kwargs["spawn_daemon"] = True
+                robot_kwargs["use_sim"] = True
 
             logger.info("Initializing ReachyMini (SDK will auto-detect appropriate backend)")
             robot = ReachyMini(**robot_kwargs)
